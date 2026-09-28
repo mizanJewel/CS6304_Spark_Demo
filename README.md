@@ -96,3 +96,7 @@ spark-shell
 ```
 
 (Adjust paths as needed; ensure inputs exist if reading from HDFS.)
+
+## 6) Replace the user_id
+
+Replace <your_user_id> in the code and command with your id
