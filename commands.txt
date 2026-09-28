@@ -1,6 +1,6 @@
 Download the git file and enter into the folder:
 
-git clone https://github.com/hasiburrahman875/CS6304_Spark_Demo
+git clone https://github.com/mizanJewel/CS6304_Spark_Demo
 cd CS6304_Spark_Demo
 
 ***************
@@ -23,7 +23,7 @@ Simple WordCount
 
 spark-shell
 
-val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolderSpark/input1.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/<your_user_id>/InputFolderSpark/input1.txt")
 System.out.println(loadfile.collect().mkString("\n"))
 
 val words = loadfile.flatMap(line => line.split(" "))
@@ -49,7 +49,7 @@ System.out.println(sorted.collect().mkString("\n"))
 val filter = sorted.filter(_._2 > 1)
 System.out.println(filter.collect().mkString("\n"))
 
-filter.saveAsTextFile("hdfs://localhost:9000/user/mrpk9/OutputFolderSpark/")
+filter.saveAsTextFile("hdfs://localhost:9000/user/<your_user_id>/OutputFolderSpark/")
 
 
 **************************
@@ -58,7 +58,7 @@ Word count in all Chapters
 
 spark-shell
 
-val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolderSpark/input2.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/<your_user_id>/InputFolderSpark/input2.txt")
 
 val pairs = loadfile.map{ line => val parts = line.split("\t");	(parts(0), parts(1)); }
 System.out.println(pairs.collect().mkString("\n"))
@@ -95,7 +95,7 @@ Word count in all Chapters (another approach)
 
 spark-shell
 
-val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolder/input2.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/<your_user_id>/InputFolder/input2.txt")
 
 val pairs = loadfile.map{ line => val parts = line.split("\t"); (parts(0), parts(1)); }
 System.out.println(pairs.collect().mkString("\n"))
