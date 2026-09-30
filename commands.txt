@@ -95,7 +95,7 @@ Word count in all Chapters (another approach)
 
 spark-shell
 
-val loadfile = sc.textFile("hdfs://localhost:9000/user/<your_user_id>/InputFolder/input2.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/<your_user_id>/InputFolderSpark/input2.txt")
 
 val pairs = loadfile.map{ line => val parts = line.split("\t"); (parts(0), parts(1)); }
 System.out.println(pairs.collect().mkString("\n"))
