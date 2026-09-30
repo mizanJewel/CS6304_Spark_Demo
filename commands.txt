@@ -100,7 +100,7 @@ val loadfile = sc.textFile("hdfs://localhost:9000/user/<your_user_id>/InputFolde
 val pairs = loadfile.map{ line => val parts = line.split("\t"); (parts(0), parts(1)); }
 System.out.println(pairs.collect().mkString("\n"))
 
-val chapters = pairs.flatMap{ case (line, chapter) => val words = line.split(" ") words.map(word => (word, chapter));}
+val chapters = pairs.flatMap{ case (line, chapter) => val words = line.split(" "); words.map(word => (word, chapter));}
 val filterChap = chapters.filter(_._1.startsWith("Ex")==false)
 System.out.println(filterChap.collect().mkString("\n"))
 
